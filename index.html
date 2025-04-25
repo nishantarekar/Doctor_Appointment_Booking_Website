@@ -1,0 +1,603 @@
+
+<!--  <?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $date = $_POST['date'];
+
+   $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name','$email','$number','$date')") or die('query failed');
+
+   if($insert){
+      $message[] = 'appointment made successfully!';
+   }else{
+      $message[] = 'appointment failed';
+   }
+
+}
+?>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Doctor's Apointment Booking System Website</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>RAISONI</strong>  DAWAKHANA </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#services">services</a>
+        <a href="#doctors">doctors</a>
+        <a href="#appointment">appointment</a>
+        <a href="#review">review</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image">
+        <img src="image/home-img.jpg" alt=""/>
+    </div>
+
+    <div class="content">
+        <h3>we take care of your healthy life</h3>
+        <p> A person who has good physical health is likely to have bodily functions and processes working at their peak.</p>
+        <a href="#appointment" class="btn"> appointment us <span class="fas fa-chevron-right"></span> </a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-user-md"></i>
+        <h3>150+</h3>
+        <p>doctors at work</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <h3>2500+</h3>
+        <p>satisfied patients</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-procedures"></i>
+        <h3>500+</h3>
+        <p>bed facility</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-hospital"></i>
+        <h3>50+</h3>
+        <p>available hospitals</p>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="image/about-img.jpg" alt=""/>
+        </div>
+
+        <div class="content">
+            <h3>take the world's best quality treatment</h3>
+            <p>Book appointments with top-rated, certified medical professionals across various specialties, ensuring the highest quality of care.</p>
+            <p>Our platform ensures a hassle-free appointment experience, with timely consultations and personalized treatment plans tailored to every patient's needs.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>Free Checkups</h3>
+            <p>Our platform offers free health checkups through trusted clinics, promoting preventive care and early detection of common medical conditions.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-ambulance"></i>
+            <h3>24/7 Ambulance</h3>
+            <p>Our system ensures 24/7 ambulance availability, providing emergency medical transport services anytime, anywhere, with just a single booking click.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-md"></i>
+            <h3>Expert Doctors</h3>
+            <p>Our platform connects patients with expert doctors from various specialties, ensuring high-quality, professional, and accurate medical diagnosis and treatment.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-pills"></i>
+            <h3>Medicines</h3>
+            <p>Our platform allows patients to order prescribed medicines online, ensuring fast, reliable delivery from licensed pharmacies right to their doorstep.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-procedures"></i>
+            <h3>Bed Facility</h3>
+            <p>Our platform provides real-time information about hospital bed availability, helping patients find immediate admission during emergencies or planned treatments.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Total Care</h3>
+            <p> Our platform ensures total care by combining doctor consultations, diagnostics, medicines, and follow-ups in one seamless healthcare experience and testing patients.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+
+
+<!-- doctors section starts  -->
+
+<section class="doctors" id="doctors">
+
+    <h1 class="heading"> Our <span>Doctors</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="image/doc-1.jpg" alt=""/>
+            <h3>Dr. Preety Zinta</h3>
+            <span>Cardiologist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-2.jpg" alt=""/>
+            <h3>Dr. Nishant Arekar</h3>
+            <span>ENT Specialist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-3.jpg" alt=""/>
+            <h3>Dr. Sonali Bendre</h3>
+            <span>Psychiatrist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-4.jpg" alt=""/>
+            <h3>Dr. Shraddha Kapoor</h3>
+            <span>Dentist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-5.jpg" alt=""/>
+            <h3>Dr.Tushar Shinde</h3>
+            <span> Neurologist </span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-6.jpg" alt=""/>
+            <h3>Dr. Anshul Samundre</h3>
+            <span>Orthopedic Surgeon</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/anu.jpg" alt=""/>
+            <h3>Dr. Anurag Darode</h3>
+            <span>Gynecologist</span>
+            <div class="share">
+                
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/doc-8.jpg" alt=""/>
+            <h3>Dr. Yash Nagdawane </h3>
+            <span> Urologist </span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/dr_9.jpg" alt=""/>
+            <h3>Dr. Aman Darode</h3>
+            <span>Ayurvedic Doctor</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- doctors section ends -->
+
+<!-- appointmenting section starts   -->
+
+<section class="appointment" id="appointment">
+
+    <h1 class="heading"> <span>appointment</span> now </h1>    
+
+    <div class="row">
+
+        <div class="image">
+            <img src="image/appointment-img.jpg" alt=""/>
+        </div>
+
+        <form action="JDBC_servlet" method="post">
+    <!--      <?php
+            if(isset($message)) {
+                foreach($message as $message) {
+                echo'<p class ="message">'.$message.'</p>';
+            }
+            }
+        ?>
+        -->
+      
+            <h3>make appointment</h3>
+            <input type="text" name="name" placeholder="your name" class="box"/>
+            <input type="number" name="number" placeholder="your number" class="box"/>
+            <input type="email" name="email" placeholder="your email" class="box"/>
+            <input type="date" name="date" class="box"/>
+            <input type="submit" name="submit" value="appointment now" class="btn"/>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- appointmenting section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+    
+    <h1 class="heading"> client's <span>review</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="image/bharti.jpg" alt=""/>
+            <h3>Bharti Mam</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">"Booking an appointment was so easy and fast! I found a specialist nearby and got treated the same day. Amazing service!"</p>
+        </div>
+
+        <div class="box">
+            <img src="image/parag.jpg" alt=""/>
+            <h3>Parag Sir</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">"The platform is smooth and user-friendly. I even got reminders for my checkups. Truly the best healthcare experience!"</p>
+        </div>
+
+        <div class="box">
+            <img src="image/priyanka.jpg" alt=""/>
+            <h3>Priyanka Mam</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">"From doctor consultation to medicine delivery—everything happened in one place. This is modern healthcare at its best!"</p>
+        </div>
+        <div class="box">
+            <img src="image/aditi.jpg" alt=""/>
+            <h3>Aditi Mam</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">"From doctor consultation to medicine delivery—everything happened in one place. This is modern healthcare at its best!"</p>
+        </div>
+        <div class="box">
+            <img src="image/ankush.jpg" alt=""/>
+            <h3>Ankush Sir</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">"From doctor consultation to medicine delivery—everything happened in one place. This is modern healthcare at its best!"</p>
+        </div>
+        <div class="box">
+            <img src="image/prajakta.jpg" alt=""/>
+            <h3>Prajakta Mam</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">"From doctor consultation to medicine delivery—everything happened in one place. This is modern healthcare at its best!"</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> Our <span>Blogs</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i>19 March 25</a>
+                    <a href="#"> <i class="fas fa-user"></i> by Times Of India</a>
+                </div>
+                <h3> Why Online Doctor Booking Is the Future</h3>
+                <p>"As digital health gains momentum, online booking systems simplify medical access for millions across India."</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-2.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 20 March 25 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by NDTV Times </a>
+                </div>
+                <h3>Importance of Regular Health Checkups</h3>
+                <p>"Preventive healthcare is the best healthcare. Know why regular checkups can save lives and reduce long-term treatment costs."</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-3.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 21 March 25</a>
+                    <a href="#"> <i class="fas fa-user"></i> by Hitwada News</a>
+                </div>
+                <h3>Emergency? Use 24/7 Ambulance Booking</h3>
+                <p>"A life-saving solution—ambulance services that reach you on time through smart, real-time booking platforms."</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-4.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 22 March 25</a>
+                    <a href="#"> <i class="fas fa-user"></i>by Hindustan Times</a>
+                </div>
+                <h3>Order Medicines Right from Your Home</h3>
+                <p> "Medication delivery is evolving. Here is how doorstep pharmacy services are helping patients manage their treatment."</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-5.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 23 March 25 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by Lokmat News</a>
+                </div>
+                <h3> Total Care Under One Roof</h3>
+                <p>"Ayurveda, allopathy, diagnostics, and more one platform is redefining how patients experience complete care."</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-6.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 24 March 25 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by Nagpur News </a>
+                </div>
+                <h3> Benefits of Consulting Expert Specialists</h3>
+                <p>"From accurate diagnoses to personalized care, expert consultations are essential. Here is how technology helps bridge the gap."</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Quick links</h3>
+            <a href="#home"> <i class="fas fa-chevron-right"></i> Home </a>
+            <a href="#about"> <i class="fas fa-chevron-right"></i> About </a>
+            <a href="#services"> <i class="fas fa-chevron-right"></i> Services </a>
+            <a href="#doctors"> <i class="fas fa-chevron-right"></i> Doctors </a>
+            <a href="#appointment"> <i class="fas fa-chevron-right"></i> Make Appointment </a>
+            <a href="#review"> <i class="fas fa-chevron-right"></i> Review </a>
+            <a href="#blogs"> <i class="fas fa-chevron-right"></i> Blogs </a>
+        </div>
+
+        <div class="box">
+            <h3>Our Services</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Dental Care</a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Free Health Checkups</a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Specialist Consultations</a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Bed Availability Info</a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Total Patient Care</a>
+        </div>
+
+        <div class="box">
+            <h3>appointment info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +919284564992 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +917517275535</a>
+            <a href="#"> <i class="fas fa-phone"></i>+918010304937</a>
+            <a href="#"> <i class="fas fa-envelope"></i>nishantarekar98@gmail.com</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i>Nagpur, Maharashtra</a>
+        </div>
+
+       <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook"></i> Facebook </a>
+            <a href="#"> <i class="fab fa-instagram"></i>Instagram</a>
+            <a href="#"> <i class="fab fa-twitter"></i>Twitter </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> Linkedin </a>
+            <a href="#"> <i class="fab fa-youtube"></i>Youtube </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>nishant arekar</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+<!-- js file link  -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
